@@ -1,159 +1,112 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gaurav Solanki – Resume</title>
-
+<title>Gaurav Solanki</title>
 <style>
   body {
+    margin: 0;
     font-family: 'Source Code Pro', monospace;
     background-color: #f3f3f3;
     color: #111;
-    font-size: 1rem;
+  }
+
+  /* Desktop view default */
+  #desktopView { display: block; }
+  #mobileView { display: none; }
+
+  /* Hide desktop, show mobile under 768px */
+  @media (max-width: 768px) {
+    #desktopView { display: none; }
+    #mobileView { display: block; }
+  }
+
+  /* ----- MOBILE LAYOUT STYLES ----- */
+  #mobileView {
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    background: #ffffff;
+    color: #111;
+    padding: 16px;
+    line-height: 1.55;
+  }
+
+  #mobileView h1 {
+    font-size: 1.5rem;
     margin: 0;
+  }
+
+  #mobileView .subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 4px;
+  }
+
+  #mobileView nav {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #mobileView nav a {
+    background: #d9ebff;
+    color: black;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+
+  #mobileView section {
+    margin-top: 22px;
+  }
+
+  #mobileView h2 {
+    font-size: 1.05rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+
+  #mobileView .entry {
+    margin-bottom: 16px;
+  }
+
+  #mobileView .entry strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  #mobileView ul {
+    margin: 8px 0 8px 18px;
     padding: 0;
   }
 
-  /* ---------- Header ---------- */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 40px 18px 40px;
-    border-bottom: 1px solid #ddd;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .header h1 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-
-  .header p {
-    margin: 3px 0 0 0;
-    font-size: 0.75rem;
-    color: #555;
-  }
-
-  .menu {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-  }
-
-  .menu a {
-    text-decoration: none;
-    color: #222;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-
-  .menu a:hover {
-    color: #0077ff;
-  }
-
-  /* ---------- Sections ---------- */
-  .section {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
-    line-height: 1.6;
-  }
-
-  .section h2 {
-    margin: 28px 0 10px 0;
-    font-size: 1rem;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 4px;
-  }
-
-  .flex-row {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-  }
-
-  .flex-row strong {
-    width: 220px;
-    color: #333;
-    flex-shrink: 0;
-    font-size: 0.9rem;
-  }
-
-  .flex-row span {
-    margin-left: 15px;
-    flex: 1;
-    font-size: 0.9rem;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    font-size: 0.8rem;
+  #mobileView li {
     margin-bottom: 6px;
-    color: #222;
+    font-size: 0.92rem;
   }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 1024px) {
-    .section {
-      padding: 0 15px;
-      margin: 15px auto;
-    }
+  #mobileView a.link {
+    color: #0077ff;
+    text-decoration: none;
   }
 
-  @media (max-width: 768px) {
-    .header {
-      padding: 15px 20px;
-      text-align: center;
-    }
-    .menu {
-      justify-content: center;
-      gap: 15px;
-    }
-    .section {
-      margin: 10px auto;
-      padding: 0 15px;
-    }
-    .flex-row strong {
-      width: 100%;
-      margin-bottom: 4px;
-    }
-    .flex-row span {
-      margin-left: 0;
-    }
-  }
-
-  @media (max-width: 480px) {
-    body {
-      font-size: 0.9rem;
-    }
-    .header h1 {
-      font-size: 1rem;
-    }
-    .header p {
-      font-size: 0.7rem;
-    }
-    .menu a {
-      font-size: 0.8rem;
-    }
-    .section h2 {
-      font-size: 0.9rem;
-    }
-    li {
-      font-size: 0.78rem;
-    }
+  #mobileView .muted {
+    color: #555;
+    font-size: 0.9rem;
   }
 </style>
 </head>
-<body>
 
- <div class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 40px 18px 40px; font-family: 'Source Code Pro', monospace; border-bottom: 1px solid #ddd;">
+<body>
+  <!-- ================= DESKTOP VIEW ================= -->
+  <div id="desktopView">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 40px 18px 40px; font-family: 'Source Code Pro', monospace; border-bottom: 1px solid #ddd;">
 
   <!-- Left Section -->
   <div style="margin-left: 0">
@@ -177,7 +130,7 @@
   </div>
 </div>
 
-<div style="max-width: 1100px; margin: 5px auto; padding: 10px; font-family: 'Source Code Pro', monospace; color: #111; line-height: 1.6; margin-left: 14%;">
+<div style="max-width: 1100px; margin: 5px auto; padding: 10px; font-family: 'Source Code Pro', monospace; color: #111; line-height: 1.6; margin-left: 175px;">
 
   <h2 style="margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-top: 28px;">Technical Skills</h2>
 
@@ -217,7 +170,7 @@
 </div>
 
 
-<div style="max-width: 1100px; margin: 20px auto; padding: 10px; font-family: 'Source Code Pro', monospace; color: #111; line-height: 1.6; margin-left: 14%;">
+<div style="max-width: 1100px; margin: 20px auto; padding: 10px; font-family: 'Source Code Pro', monospace; color: #111; line-height: 1.6; margin-left: 175px;">
 
   <h2 style="margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid #ccc; padding-bottom: 4px;">Professional Experience</h2>
 
@@ -546,7 +499,7 @@
 
 
 
-<div style="font-size: 12px; color: #222; margin-left: 14.5%; margin-top: 30px; font-family: 'Source Code Pro', monospace; max-width: 1100px; margin-bottom: 50px;">
+<div style="font-size: 12px; color: #222; margin-left: 185px; margin-top: 30px; font-family: 'Source Code Pro', monospace; max-width: 1100px; margin-bottom: 50px;">
   <h2 style="margin-bottom: 15px; font-size: 16px; border-bottom: 1px solid #ccc; padding-bottom: 4px; max-width: 1100px;">Education</h2>
 
   <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
@@ -570,12 +523,171 @@
 
 
 </div>
+  </div>
 
-  
+  <!-- ================= MOBILE VIEW ================= -->
+  <div id="mobileView">
 
+    <header>
+      <h1>Gaurav Solanki</h1>
+      <p class="subtitle">Senior Software Engineer · AI Engineer (RAG, LLM, Distributed Systems)</p>
+      <p class="subtitle">AI Exploitation · Cloud Red Teaming</p>
 
-</div>
+      <nav>
+        <a style="display: flex; gap: 10px;" href="ai.html">Artificial Intelligence <img style="height: 20px; width: 20px;" src="./ExternalLink.png" /></a>
+        <a style="display: flex; gap: 10px;" href="sysarch.html">System Architectures <img style="height: 20px; width: 20px;" src="./ExternalLink.png" /></a>
+        <a style="display: flex; gap: 10px;" href="quantum.html">Quantum <img style="height: 20px; width: 20px;" src="./ExternalLink.png" /></a>
+        <a style="display: flex; gap: 10px;" href="hacking.html">Offensive Sec. <img style="height: 20px; width: 20px;" src="./ExternalLink.png" /><a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="entry"><strong>Languages & Frameworks</strong> Java, JavaScript, Spring Boot, FastAPI, Node.js, React Native, SQL</div>
+      <div class="entry"><strong>Data & Storage Systems</strong> Cassandra, PostgreSQL, Redis, Kafka, Elasticsearch, MongoDB, S3 (Object Storage)</div>
+      <div class="entry"><strong>Architecture & Scalability</strong> Microservices, Event-Driven Architecture, CQRS, Saga Pattern, Idempotency, Sharding, Caching, Rate Limiting, High-Concurrency Optimization</div>
+      <div class="entry"><strong>Cloud & DevOps</strong> AWS (EC2, S3, Lambda, EKS), Docker, Kubernetes, CI/CD (Jenkins), Nginx</div>
+      <div class="entry"><strong>AI & NLP Systems</strong> Retrieval-Augmented Generation (RAG), Hybrid Retrieval (BM25 + Dense), Transformers (BERT, RoBERTa), Sentence Transformers, Vector Databases (FAISS, Pinecone), NLI Verification, LoRA Fine-Tuning</div>
+      <div class="entry"><strong>Security & Compliance</strong> libsignal Protocol, AES/RSA, JWT, OAuth2, PCI Compliance, Tokenization, TLS/SSL</div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      <div class="entry">
+        <strong>Qindle Innovative Solutions Pvt. Ltd.</strong>
+        <span class="muted">Feb 2022 – Present · New Delhi, India</span><br>
+        <h3>Senior Software Engineer | AI Engineer (LLM, RAG, Distributed Systems)</h3>
+        <strong>Hybrid (BM25 style) + Vector Retrieval with Contextual LLM Orchestration for Structured Product QA</strong>
+        <ul>
+          <li>Engineered and orchestrated an enterprise-grade hybrid retrieval–generation (RAG) framework combining lexical and dense vector search with transformer-based contextual reasoning and factual validation pipelines.</li>
+          <li>Developed distributed orchestration microservices implementing asynchronous query batching, circuit breakers, and adaptive backpressure handling; integrated Redis caching (TTL-based, pub/sub invalidation) to minimize redundant retrieval calls by 30 %. </li>
+          <li>Implemented multi-stage retrieval fusion — BM25-style keyword retrieval, dense embedding-based similarity search, and cross-encoder reranking — achieving optimal contextual precision across multi-attribute product domains.</li>
+          <li>Designed and fine-tuned multiple transformer submodules for query intent detection, attribute and context extraction (sequence labeling), semantic reranking (pairwise cross-encoding), and domain-adapted generative response modeling using low-rank adaptation (LoRA).</li>
+          <li>Integrated entailment-based factual verification layer leveraging natural language inference (NLI) and retrieval similarity scoring to filter or downgrade hallucinated LLM outputs in the RAG pipeline.</li>
+          <li>Automated full MLOps lifecycle via Airflow and MLflow — covering ETL ingestion, embedding refresh, fine-tuning, evaluation, model versioning, and active learning loops — with quantized mixed-precision inference and GPU batching for optimized throughput.</li>
+          <li>Established observability stack using Prometheus + Grafana for latency, cache-hit ratio, retrieval relevance, and GPU utilization tracking; achieved < 2 s P95 latency and > 93 % factual accuracy (entailment-verified).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Vector-Augmented Product Search Engine</strong>
+        <ul>
+          <li>Architected and deployed a hybrid vector–lexical product search engine integrating dense embedding retrieval with BM25 scoring and transformer-based re-ranking for precise and semantically grounded search results.</li>
+          <li>Designed the query understanding pipeline for normalization, attribute span extraction, and intent classification, enabling natural language product search over large SKU catalogs.</li>
+          <li>Developed distributed orchestration microservices for parallel dense–sparse retrieval fusion, asynchronous score aggregation, and circuit-breaker–based fault tolerance under <800 ms p95 latency.</li>
+          <li>Implemented Redis caching and Airflow-driven ETL pipelines for query acceleration, embedding generation, and nightly index synchronization across hybrid storage backends.</li>
+          <li>Optimized ranking layer using ONNX-accelerated transformer cross-encoders, improving nDCG and top-k precision metrics by >20 %.</li>
+          <li>Established observability and auto-recovery mechanisms, and fallback retrievers to ensure high resilience and SLA adherence under production traffic.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Distributed Event-driven Post Creation & Moderation</strong>
+        <ul>
+          <li>Designed & Engineered a distributed content creation & moderation pipeline handling 50K+ DAU, leveraging Kafka for async decoupling and Redis sliding-window rate limiting to enforce per-user quotas.</li>
+          <li>Built a secure media ingestion workflow with temporary S3 buckets (15-min TTL auto-cleanup) and lightweight ML moderation, reducing unsafe content exposure by >95% before CDN persistence.</li>
+          <li>Designed Cassandra fan-out data model with Snowflake IDs and secondary tables, achieving p95 <200ms feed reads and eliminating single-point failures via multi-node replication.</li>
+          <li>Implemented resilient failure handling (2-retry writes, DLQ with alerts, orphan file cleanup), improving system reliability by 30% and ensuring high-throughput post consistency.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Commenting & Notification Orchestration with Idempotency & Redis Rate Limiting</strong>
+        <ul>
+          <li>Designed and implemented the module with Redis-enforced per-user/post quotas and Snowflake ID-based idempotency, handling 10M+ comment operations per month with consistent limits and globally unique IDs.</li>
+          <li>Developed async moderation pipeline for comments with lightweight ML filters, integrating temporary S3 storage for media and ensuring real-time content safety without blocking user experience.</li>
+          <li>Architected Cassandra fan-out tables for comments by post and user, achieving p95 <200ms read latency under high-concurrency workloads, with automatic recovery of Redis counters via Kafka replay after node failures.</li>
+          <li>Built reliable notification delivery system for comments, using Kafka for batching and fan-out, auto-retry queues, and DLQ monitoring, ensuring high-throughput, fault-tolerant notifications across millions of followers.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Real-Time Personalized Feed Serving & Caching </strong>
+        <ul>
+         <li>Designed and Engineered a fan-out-on-read feed service fetching latest posts from followed users (Cassandra) and merging with ML-recommended posts in real time, serving thousands of DAU with p95 latency < 200ms.</li>
+         <li>Implemented per-user Redis feed cache with 20-minute TTL, supporting incremental updates on scroll-end, manual refresh, and hot user optimization, reducing backend Cassandra read queries by >60% and improving user-perceived latency.</li>
+         <li>Designed advanced feed merging and filtering pipeline, combining latest posts and ML recommendations, applying user-specific block/hidden filters, and sorting by Snowflake-generated Post Ids to ensure chronological consistency and accurate pagination.</li>
+         <li>Built robust edge-case handling for hot users and posts, including parallelized Cassandra queries, fallback for sparse clusters, and graceful Redis failure recovery, maintaining 99.99% service availability under high concurrency.</li>
+        </ul>
+      </div>
+
+       <div class="entry">
+        <strong>Profile Vectorization & ML Recommendation Orchestration  </strong>
+        <ul>
+         <li>Developed offline batch pipeline to compute daily user profile vectors via weighted aggregation of user interactions mapped to prebuilt post embeddings, achieving 95% coverage of active user interests for feed personalization.</li>
+         <li>Integrated Sentence Transformers (text) and CLIP (image/video) embeddings for post vectorization, clustered posts in vector DB (Pinecone) by similarity thresholds, enabling  scalable nearest-neighbor retrieval for millions of posts with <150ms query latency.</li>
+         <li>Orchestrated real-time feed recommendation by querying relevant vector clusters, retrieving top N candidate posts, merging with latest posts from followed users, and applying personalization filters, increasing click-through rate (CTR) by 18% and watch-time engagement by 22%. </li>
+         <li>Ensured fault-tolerant ML orchestration with idempotent vector updates, offline batch consistency, automatic post deletion propagation across Cassandra tables, vector clusters, and Redis cache, maintaining eventual consistency and zero downtime during system failures.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Idempotent Saga-Orchestrated Order Processing</strong>
+        <ul>
+         <li>Architected an idempotent Cart & Order Placement module spanning Cart, Order, Inventory, and Payment services, enabling ~50K orders/day throughput with p95 checkout latency <180ms through Redis-backed caching and parallelized orchestration.</li>
+         <li>Implemented Saga-based orchestration across payment, inventory reservation, and fulfillment, ensuring exactly-once order placement and 99.97% fault tolerance during node failures and payment gateway retries.</li>
+         <li>Hardened security & compliance by integrating PCI-compliant payment flows, tokenized transactions, and Redis-stored idempotency keys to prevent replay/fraud, reducing duplicate orders by 98%. </li>
+         <li>Delivered end-to-end observability (Prometheus metrics, ELK logs, Jaeger traces) and automated compensation flows, cutting order failure recovery time from 30 mins to <2 mins while maintaining strict SLAs on availability (99.9%).</li>
+        </ul>
+      </div>
+
+       <div class="entry">
+        <strong>Order Tracking & Notification</strong>
+        <ul>
+         <li>Engineered real-time order tracking system handling ~80K+ monthly lookups, combining Redis-based caching (p95 latency <120ms) with RDBMS fallback, ensuring fast and consistent customer experience during peak sale periods.</li>
+         <li>Integrated multiple shipping providers via Adapter Pattern, with retry/backoff logic and cache fallbacks, delivering >99.9% uptime despite frequent partner API throttling or downtime.</li>
+         <li>Developed fault-tolerant push notification pipeline using Kafka + Redis deduplication, enabling alerts while cutting duplicate notifications by 50%+ and improving SLA compliance.</li>
+         <li>Optimized background job scheduling for active orders refresh (~20K/day) using batch partner polling and event-driven cache updates, scaling horizontally to sustain traffic spikes without exceeding partner API limits.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Software Engineer I</h3>
+        <span class="muted">Apr 2021 – Feb 2022</span>
+        <ul>
+          <li>Implemented VitalsService and Redis caching layer, enabling <50ms retrieval of latest health vitals for thousands of users, with server-side validation and fault-tolerant writes to partitioned PostgreSQL tables.</li>
+          <li>Developed asynchronous Kafka event pipeline for vitals data, decoupling analytics and reporting consumers from the main ingestion flow, ensuring high throughput and zero impact on latency-sensitive operations.</li>
+          <li>Built secure PDF reporting service integrated with S3 signed URLs, providing monthly vitals reports with TLS/AES-256 encryption and row-level ACLs, while maintaining <200ms query latency on partitioned historical data.</li>
+          <li>Implemented Reminder Service & Scheduler Worker to handle creation, persistence, and timely delivery of user reminders via Kafka-driven event pipeline.</li>
+          <li>Optimized latency & concurrency by caching upcoming reminders per user in Redis (<50ms read), ensuring reliable scheduling and notifications for multiple simultaneous users.</li>
+          <li>Integrated push delivery with Firebase Cloud Messaging and implemented retry/fallback mechanisms to ensure high reliability, fault tolerance, and single-device enforcement for thousands of reminders per month.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <strong>Full-Stack Developer Intern</strong>
+        <span class="muted">Feb 2021 – Mar 2021</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <div class="entry">
+        <strong>Adversarial AI: Attacks & Offensive Strategies with Foolbox</strong>
+        <span class="muted">Jan 2025</span><br>
+        <a href="https://amzn.in/d/0b3gN5q" class="link">https://amzn.in/d/0b3gN5q</a>
+        <ul>
+          <li>Authored a comprehensive guide on adversarial machine learning, focusing on offensive security techniques and AI model robustness. Covered practical applications of gradient-based, score-based, and decision-based attack strategies along with code examples and security countermeasures.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <strong>Master of Computer Applications (MCA)</strong>
+        <span class="muted">Rajiv Gandhi Prodyogiki Vishwavidyalaya (RGPV), Bhopal, M.P · Jul 2022 – Jul 2024</span>
+      </div>
+      <div class="entry">
+        <strong>Bachelor of Computer Applications (BCA)</strong>
+        <span class="muted">Devi Ahilya Vishwavidyalaya (DAVV), Indore, M.P · Aug 2019 – Jun 2022</span>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
+
+
 
 
